@@ -17,8 +17,13 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
-
-
+myVillagers = [
+  'Rex', 'Agnes', 'Billy', 'Truffles', 'Phil', 'Chops', 'Tiffany', 'Harry', 'Gonzo', 'Kiki'
+];
+console.log('EXAMPLE CHALLENGE:');
+console.log(
+  processFirstItem(myVillagers, (str) => str + str)
+)
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -28,11 +33,15 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ counter1 has a nested function within another function and its variables are within the function scope.
+ counter2 has no nested function and is using a varible that is declared outside of it's scope.
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ Both codes use closure. I can tell because the functions in both are able to access the data they need carry out their purpose without an error.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ counter1 code would be preferrable if you needed to have the certain data contained within a block of code. For example, you might not want other functions to have access to the count variable since it could be easily manipulated if it was global. counter2 would be better if the count varaible was needed by other functions in the code. 
+ * 
 */
 
 // counter1 code
