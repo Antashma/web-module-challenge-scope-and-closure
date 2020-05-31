@@ -66,11 +66,14 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(min, max){
+const points = Math.floor(Math.random() *  (max - min + 1)) + min;
+return points;
 }
+// retreived from: https://www.w3schools.com/js/js_random.asp
+
+console.log('TASK 2:');
+console.log(inning(0, 2));
 
 /* Task 3: finalScore()
 
@@ -86,11 +89,26 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(callback, num){
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 0; i < num; i++) {
+    let pointsScoredHome = callback(0,2);
+    let pointsScoredAway = callback(0,2);
+    homeScore += pointsScoredHome;
+    awayScore += pointsScoredAway;
+  }
+  const endGameScore = {
+    'Home': homeScore,
+    'Away': awayScore
+  }
+  return endGameScore;
 }
+
+console.log('TASK 3:')
+console.log(
+  finalScore(inning, 9)
+  );
 
 /* Task 4: 
 
@@ -114,7 +132,7 @@ and returns the score at each pont in the game, like so:
 Final Score: 6 - 10 */
 
 function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+  
 }
 
 
