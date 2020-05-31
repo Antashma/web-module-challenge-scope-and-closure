@@ -20,7 +20,7 @@ function processFirstItem(stringList, callback) {
 myVillagers = [
   'Rex', 'Agnes', 'Billy', 'Truffles', 'Phil', 'Chops', 'Tiffany', 'Harry', 'Gonzo', 'Kiki'
 ];
-console.log('EXAMPLE CHALLENGE:');
+console.log('#### EXAMPLE CHALLENGE ####');
 console.log(
   processFirstItem(myVillagers, (str) => str + str)
 )
@@ -72,7 +72,7 @@ return points;
 }
 // retreived from: https://www.w3schools.com/js/js_random.asp
 
-console.log('TASK 2:');
+console.log('#### TASK 2 ####');
 console.log(inning(0, 2));
 
 /* Task 3: finalScore()
@@ -97,7 +97,8 @@ function finalScore(callback, num){
     let pointsScoredAway = callback(0,2);
     homeScore += pointsScoredHome;
     awayScore += pointsScoredAway;
-  }
+    //console.log( [homeScore, awayScore])     
+    };
   const endGameScore = {
     'Home': homeScore,
     'Away': awayScore
@@ -105,7 +106,7 @@ function finalScore(callback, num){
   return endGameScore;
 }
 
-console.log('TASK 3:')
+console.log('#### TASK 3 ####');
 console.log(
   finalScore(inning, 9)
   );
@@ -131,8 +132,41 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  
+function scoreboard(callback, num) {
+  let homeScore = 0;
+  let awayScore = 0;
+  let scoresArr = [];
+  const gameResults = {};
+  //generate ea inning score
+  for (let i = 0; i < num; i++) {
+    let pointsScoredHome = callback(0,2);
+    let pointsScoredAway = callback(0,2);
+    homeScore += pointsScoredHome;
+    awayScore += pointsScoredAway;
+    //adds to array: [inning number, home scored, away scored]
+    scoresArr.push([(i + 1), homeScore, awayScore]); 
+    };
+    for (let i = 0; i < scoresArr.length; i++) {
+      let place = () => {
+        if (i + 1 === 1 ) {
+          return 'st';
+        } else if (i + 1 === 2) {
+          return 'nd';
+        } else if (i + 1 === 3 ) {
+          return 'rd';
+        } else  {
+          return 'th';	
+        }
+      }
+        gameResults['inn' + (i + 1)] = `${i + 1}${place()} Inning: ${scoresArr[i][1]} - ${scoresArr[i][2]}`;
+      };
+        gameResults.final = `Final Score: ${homeScore} - ${awayScore}`;
+    return Object.values(gameResults); 
 }
+
+console.log('#### TASK 4 ####')
+console.log(
+  scoreboard(inning, 9)
+);
 
 
