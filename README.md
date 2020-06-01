@@ -27,11 +27,15 @@ There are layers upon layers of nested functions within the game of baseball. Yo
 
 ### Task 1 - Set Up Project and Tests
 
-1.[x] Fork repo and add TL as collaborator on Github
-2.[x]  Clone _your_ fork (not Lambda's repo by mistake!)
-3.[x]  `cd` into your newly cloned repository
-4.[x] Create a new branch by typing `git checkout -b <firstName-lastName>`
-5.[x]  Work on your branch, push commits and create PR as usual
+1. Fork repo and add TL as collaborator on Github
+
+2. Clone _your_ fork (not Lambda's repo by mistake!)
+
+3. `cd` into your newly cloned repository
+
+4. Create a new branch by typing `git checkout -b <firstName-lastName>`
+
+5. Work on your branch, push commits and create PR as usual
 
 ### Task 2a - MVP code
 
@@ -42,6 +46,8 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+_Closure is the concept of a function's scope when it is nested within another function. If done properly, the function is able to locate and use data that is refrenced outside of its block without error._
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +69,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+_CLosure is used in the functions. I can tell because when the program is run, there are no errors such as variables being  undefined._
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+_The name that is returned will always be 'Dan'. The number can change._
+
 c. What is the lexical scope of `newRoll`? 
+_The lexical scope of `new Roll` is `Math.floor(Math.random() * 6)`._
 
 ### Task 3 - Stretch Goals
 
