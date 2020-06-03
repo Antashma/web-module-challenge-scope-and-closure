@@ -67,13 +67,12 @@ function counter2() {
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning(min, max){
-const points = Math.floor(Math.random() *  (max - min + 1)) + min;
+const points = Math.floor(Math.random() *  (max - min));
 return points;
 }
-// retreived from: https://www.w3schools.com/js/js_random.asp
 
 console.log('#### TASK 2 ####');
-console.log(inning(0, 2));
+console.log(inning(0, 3));
 
 /* Task 3: finalScore()
 
