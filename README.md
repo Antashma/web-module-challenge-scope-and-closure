@@ -46,7 +46,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
-_Closure is the concept of a function's scope when it is nested within another function. If done properly, the function is able to locate and use data that is refrenced outside of its block without error._
+_Closure is when a function is able to access the data it is required to use and in effect it can run without error._
 
 2. Study the following code, then answer the questions below.
 
@@ -69,13 +69,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-_CLosure is used in the functions. I can tell because when the program is run, there are no errors such as variables being  undefined._
+
+_Closure is used in the personalDice function. I can tell because when dansRoll() is run, the name parameter that personalDice needs is passed from the dansRoll() which is a reference to the personalDice function with "Dan" as an argument. After that, newRoll is given a random value between 1 and 6 and the console will log the name (Dan) aloong with the random number._
 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
 _The name that is returned will always be 'Dan'. The number can change._
 
 c. What is the lexical scope of `newRoll`? 
-_The lexical scope of `new Roll` is `Math.floor(Math.random() * 6)`._
+
+_The lexical scope of `new Roll` the Math.floor() and its content._
 
 ### Task 3 - Stretch Goals
 
