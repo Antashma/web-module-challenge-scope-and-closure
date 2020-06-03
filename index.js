@@ -15,15 +15,15 @@
  * should return 'foofoo'.
 */
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+  return callback(stringList[0]);
 }
 myVillagers = [
   'Rex', 'Agnes', 'Billy', 'Truffles', 'Phil', 'Chops', 'Tiffany', 'Harry', 'Gonzo', 'Kiki'
 ];
 console.log('#### EXAMPLE CHALLENGE ####');
 console.log(
-  processFirstItem(myVillagers, (str) => str + str)
-)
+  processFirstItem(myVillagers, str => str + str)
+);
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -67,8 +67,8 @@ function counter2() {
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning(min, max){
-const points = Math.floor(Math.random() *  (max - min));
-return points;
+  const points = Math.floor(Math.random() *  (max - min));
+  return points;
 }
 
 console.log('#### TASK 2 ####');
@@ -88,12 +88,13 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(callback, num){
+
+/* function finalScore(callback, num){
   let homeScore = 0;
   let awayScore = 0;
   for (let i = 0; i < num; i++) {
-    let pointsScoredHome = callback(0,2);
-    let pointsScoredAway = callback(0,2);
+    let pointsScoredHome = callback;
+    let pointsScoredAway = callback;
     homeScore += pointsScoredHome;
     awayScore += pointsScoredAway;
     //console.log( [homeScore, awayScore])     
@@ -103,6 +104,20 @@ function finalScore(callback, num){
     'Away': awayScore
   }
   return endGameScore;
+} */
+
+function finalScore(callback, numInnings) {
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 0; i < numInnings; i++) {
+      homeScore += callback(0,3);
+      awayScore += callback(0,3);
+  }
+  const final = {
+    'home': homeScore,
+    'away': awayScore
+  }
+  return final;
 }
 
 console.log('#### TASK 3 ####');
@@ -131,7 +146,7 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(callback, num) {
+/* function scoreboard(callback, num) {
   let homeScore = 0;
   let awayScore = 0;
   let scoresArr = [];
@@ -166,6 +181,16 @@ function scoreboard(callback, num) {
 console.log('#### TASK 4 ####')
 console.log(
   scoreboard(inning, 9)
+); */
+
+
+function scoreBoard(callback, numInnings) {
+  let homeScore = 0;
+  let awayScore = 0;
+  
+}
+
+console.log('#### TASK 4 ####')
+console.log(
+  scoreboard(inning, 9)
 );
-
-
