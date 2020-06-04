@@ -146,15 +146,15 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-/* function scoreboard(callback, num) {
+function scoreboard(callback, num) {
   let homeScore = 0;
   let awayScore = 0;
   let scoresArr = [];
   const gameResults = {};
   //generate ea inning score
   for (let i = 0; i < num; i++) {
-    let pointsScoredHome = callback(0,2);
-    let pointsScoredAway = callback(0,2);
+    let pointsScoredHome = callback(0,3);
+    let pointsScoredAway = callback(0,3);
     homeScore += pointsScoredHome;
     awayScore += pointsScoredAway;
     //adds to array: [inning number, home scored, away scored]
@@ -180,17 +180,5 @@ Final Score: 6 - 10 */
 
 console.log('#### TASK 4 ####')
 console.log(
-  scoreboard(inning, 9)
-); */
-
-
-function scoreBoard(callback, numInnings) {
-  let homeScore = 0;
-  let awayScore = 0;
-  
-}
-
-console.log('#### TASK 4 ####')
-console.log(
-  scoreboard(inning, 9)
-);
+  scoreboard(inning, 9) 
+  );
